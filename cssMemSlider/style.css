@@ -4,7 +4,7 @@ body {
 
 .slider__container {
     width: auto;
-    min-height: 90%;
+    height: 1000px;
     margin: 0;
     padding: 0;
     border: 1px solid green;
@@ -13,7 +13,6 @@ body {
 }
 
 .slider__slide {
-
     border-radius: 2%;
     border: 1px solid green;
     margin-top: 1%;
@@ -32,6 +31,59 @@ body {
 }
 
 .slider__slide1::after {
+    position: relative;
+    left: 10px;
+    top: 650px;
     content: "Doge Doge";
     color: white;
 }
+
+.slider__controls {
+    position: relative;
+    left: 1150px;
+}
+/* The container */
+.container {
+    display: inline;
+    position: relative;
+    padding-left: 1px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default radio button */
+  .container input {
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+  /* Don't show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: none;
+  }
