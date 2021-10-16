@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+.slider__container {
+    width: auto;
+    min-height: 90%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid green;
+
+    background-color: black;
+}
+
+.slider__slide {
+
+    border-radius: 2%;
+    border: 1px solid green;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider__slide1 {
+    width: 680px;
+    height: 510px;
+    background: url("./assets/meme1.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.slider__slide1::after {
+    content: "Doge Doge";
+    color: white;
+}
