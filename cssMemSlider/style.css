@@ -39,10 +39,35 @@ body {
   user-select: none;
 }
 
-/* Hide the browser's default radio button */
 input {
   opacity: 1;
   cursor: pointer;
+}
+
+input:after {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1%;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  border: 0.1rem solid white;
+}
+
+input:checked:after {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1%;
+  position: relative;
+  background-color: darkorange;
+  content: '';
+  display: inline-block;
+  border: 0.1rem solid white;
+}
+
+input:hover:after {
+  background-color: orange;
 }
 
 .slider__slide {
