@@ -1,0 +1,200 @@
+html, body {
+    margin: 0;
+    background-color: white;
+    height: 98%;
+}
+
+.slider__container {
+    display: flex;
+    border-radius: 2%;
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1%;
+    background-color: darkorange;
+
+}
+
+.slider__controls {
+    display: flex;
+    margin-top: 60%;
+    margin-left: 70%;
+    border-radius: 2%;
+}
+
+label {
+  height: 10rem;
+}
+
+
+input {
+  opacity: 1;
+  cursor: pointer;
+}
+
+input:after {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1%;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  border: 0.1rem solid white;
+  transition: all 0.5s ease 0s;
+}
+
+input:checked:after {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1%;
+  position: relative;
+  background-color: darkorange;
+  content: '';
+  display: inline-block;
+  border: 0.1rem solid white;
+}
+
+input:hover:after {
+  background-color: orange;
+}
+
+.slider__slide {
+  cursor: pointer;
+  font-size: 1.4rem;
+  position: relative;
+  top: -40rem;
+  left: -34rem;
+}
+
+.slider__slide::after {
+  position: relative;
+  right: 40rem;
+  top: 37rem;
+  color: white;
+}
+
+#slide1,
+#slide2,
+#slide3,
+#slide4 {
+  display: none;
+}
+
+img {
+  border-radius: 2%;
+}
+
+@keyframes dogeDoge {
+  0% {
+    content: "Doge Doge";
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    content: "Doge Doge";
+  }
+}
+
+#slide1::after {
+  animation: dogeDoge 1s linear infinite alternate;
+  content: "";
+}
+
+@keyframes dogeDoge2 {
+  0% {
+    content: "Doge Doge 2";
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    content: "Doge Doge 2";
+  }
+}
+
+#slide2::after {
+  animation: dogeDoge2 1s linear infinite alternate;
+  content: "";
+  right: 32rem;
+}
+
+@keyframes dogeDoge3 {
+  0% {
+    content: "Doge Doge 3";
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    content: "Doge Doge 3";
+  }
+}
+
+#slide3::after {
+  animation: dogeDoge3 1s linear infinite alternate;
+  content: "";
+  right: 32rem;
+}
+
+@keyframes dogeDoge4 {
+  0% {
+    content: "Doge Doge 4";
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    content: "Doge Doge 4";
+  }
+}
+
+#slide4::after {
+  animation: dogeDoge4 1s linear infinite alternate;
+  content: "";
+  right: 40rem;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity:0;
+  }
+  45% {
+    opacity:0.3;
+  }
+  55% {
+    opacity:0.7;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+input:checked + #slide1{
+  display: flex;
+  margin-right: -50rem;
+}
+
+input:checked + #slide1 > img,
+input:checked + #slide2 > img,
+input:checked + #slide3 > img,
+input:checked + #slide4 > img {
+  animation-name: fadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-direction: alternate;
+}
+
+input:checked + #slide2{
+  display: flex;
+  margin-right: -50rem;
+}
+input:checked + #slide3{
+  display: flex;
+  margin-right: -50rem;
+}
+input:checked + #slide4{
+  display: flex;
+}
