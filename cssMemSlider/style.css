@@ -1,89 +1,144 @@
 body {
     margin: 0;
+    background-color: white;
 }
 
 .slider__container {
-    width: auto;
-    height: 1000px;
-    margin: 0;
-    padding: 0;
-    border: 1px solid green;
-
-    background-color: black;
-}
-
-.slider__slide {
+    display: flex;
+    height: 800px;
     border-radius: 2%;
     border: 1px solid green;
     margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.slider__slide1 {
-    width: 680px;
-    height: 510px;
-    background: url("./assets/meme1.jpg") no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.slider__slide1::after {
-    position: relative;
-    left: 10px;
-    top: 650px;
-    content: "Doge Doge";
-    color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1%;
+    background-color: darkorange;
 }
 
 .slider__controls {
-    position: relative;
-    left: 1150px;
+    display: flex;
+    margin-top: 60%;
+    margin-left: 70%;
+    border-radius: 2%;
+    border: 1px solid green;
+    background-color: thistle;
 }
+
 /* The container */
 .container {
-    display: inline;
-    position: relative;
-    padding-left: 1px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 1.4rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+  display: inline;
+  /* position: relative; */
+  /* left: 700px; */
+  /* padding-left: 1px;
+  margin-bottom: 12px; */
+  cursor: pointer;
+  font-size: 1.0rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-  /* Hide the browser's default radio button */
-  .container input {
-    opacity: 0;
-    cursor: pointer;
-  }
+/* Hide the browser's default radio button */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+}
 
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-    border-radius: 50%;
-  }
+/* Create a custom radio button */
+/* .checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+} */
 
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
 
-  /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
 
-  /* Don't show the indicator (dot/circle) when checked */
-  .container input:checked ~ .checkmark:after {
-    display: none;
-  }
+/* Don't show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: none;
+}
+/* When second radio button is checked, slide 2 becomes visible */
+.container input#slide2:checked ~ .slider__slide2 {
+    display: flex;
+}
+
+.slider__slide {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  top: -600px;
+  left: -560px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.slider__slide::after {
+  position: relative;
+  left: 10px;
+  top: 580px;
+  color: white;
+}
+
+#slide1 {
+  display: none;
+  background: url("./assets/meme1.jpg") no-repeat;
+}
+
+#slide1::after {
+  content: "Doge Doge";
+}
+
+#slide2 {
+  display: none;
+  background: url("./assets/meme2.jpg") no-repeat;
+}
+
+#slide2::after {
+  content: "Doge Doge 2";
+}
+
+#slide3 {
+  display: none;
+  background: url("./assets/meme3.jpg") no-repeat;
+}
+
+#slide3::after {
+  content: "Doge Doge 3";
+}
+
+#slide4 {
+  display: none;
+  background: url("./assets/meme4.gif") no-repeat;
+}
+
+#slide4::after {
+  content: "Doge Doge 4";
+}
+
+input:checked + #slide1{
+  display: flex;
+}
+input:checked + #slide2{
+  display: flex;
+}
+input:checked + #slide3{
+  display: flex;
+}
+input:checked + #slide4{
+  display: flex;
+}
